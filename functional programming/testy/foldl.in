@@ -1,0 +1,11 @@
+let 
+	fun zip l1 l2 = (PAIR (hd l1) (hd l2))::(zip (tl l1) (tl l2))
+	fun foldl f z l1 =IF 0 z (foldl f (f z (hd l1)) (tl l1))
+	val ones = 1::ones
+	fun length l1 = 1+(length (tl l1 ))
+
+	fun inc i = 1+i
+	fun add x y = x+y
+	fun odd i = 1+ (even i)
+	fun even i = 1+ (odd i)
+in  foldl add   end

@@ -1,0 +1,14 @@
+Artykuł Dana Piponi:
+        "You Could Have Invented Monads! (And Maybe You Already Have.)"
+  http://sigfpe.blogspot.com/2006/08/you-could-have-invented-monads-and.html 
+
+Rozdz 9. z "Gentle Introduction to Haskell"
+        http://www.haskell.org/tutorial/monads.html
+  (szczegolnie 9.3 "Using Monads")
+
+Monadyczny parsing
+        patrz Hutton, Meijer, "Monadic Parsing in Haskell"
+                http://www.cs.nott.ac.uk/~gmh/pearl.pdf
+
+
+

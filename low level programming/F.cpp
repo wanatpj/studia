@@ -1,0 +1,83 @@
+#include<cstdio>
+#include<sys/mman.h>
+#include<string.h>
+#include<cstdlib>
+typedef unsigned char uchar;
+typedef long (*callable)(long, long, long);
+#define PAGE 4096
+#define WXMEM (2*PAGE)
+#define REP(i,n) for(int i=0;i<(n);++i)
+long codeLen [] = { 4, 4, 4, 3, 5, 41, 63 };
+char code [][100] = {
+	{0x48, 0x89, 0xf8, 0xc3},
+	{0x48, 0x89, 0xf0, 0xc3},
+	{0x48, 0x89, 0xd0, 0xc3},
+	{0x31, 0xc0, 0xc3},
+	{0x48, 0x8d, 0x47, 0x01, 0xc3},
+	{0x48, 0x85, 0xff, 0x75, 0x0f, 0x48, 0x89, 0xf7, 0x48, 0x31, 0xf6, 0x48,
+  0x31, 0xd2, 0xe8, 0x00, 0x00, 0x00, 0x00, 0xc3, 0x48, 0xff, 0xcf, 0x56,
+  0x57, 0xe8, 0xe2, 0xff, 0xff, 0xff, 0x5a, 0x5e, 0x48, 0x89, 0xc7, 0xe8,
+  0x00, 0x00, 0x00, 0x00, 0xc3},
+	{0x55, 0x48, 0x89, 0xfd, 0x53, 0x48, 0x89, 0xf3, 0x41, 0x54, 0x49, 0x89,
+  0xd4, 0xe8, 0x00, 0x00, 0x00, 0x00, 0x50, 0x48, 0x89, 0xef, 0x48, 0x89,
+  0xde, 0x4c, 0x89, 0xe2, 0xe8, 0x00, 0x00, 0x00, 0x00, 0x50, 0x48, 0x89,
+  0xef, 0x48, 0x89, 0xde, 0x4c, 0x89, 0xe2, 0xe8, 0x00, 0x00, 0x00, 0x00,
+  0x48, 0x89, 0xc2, 0x5e, 0x5f, 0x41, 0x5c, 0x5b, 0x5d, 0xe8, 0x00, 0x00,
+  0x00, 0x00, 0xc3}
+};
+void * funcPtr[256];
+char base[] = { 'A', 'B', 'C', 'Z', 'S' };
+char * fbegin, * fend;
+void SimpleRecursionScheme(char * buff){
+	static int offset[] = { 15, 36 };
+	long chunk = codeLen[5];
+	memcpy(fend,code[5],chunk);
+	REP(i,2) *(int*)(fend + offset[i]) = (int)((char*)funcPtr[(uchar)buff[i<<1]]-fend) - offset[i] - 4;
+	fend += chunk;
+}
+void Composition(char * buff){
+	static int offset [] = { 58, 14, 29, 44 };
+	long chunk = codeLen[6];
+	memcpy(fend,code[6],chunk);
+	REP(i,4) *(int*)(fend + offset[i]) = (int)((char*)funcPtr[(uchar)buff[i<<1]]-fend) - offset[i] - 4;
+	fend += chunk;
+}
+long Compute(char * buff){
+	char cmd = buff[0];
+	long a,b,c;
+	a = atol(buff+2);
+	b = atol(buff = strstr(buff + 2, ",") + 1);
+	c = atol(strstr(buff, ",") + 1);
+	return (*(callable)funcPtr[cmd])(a,b,c);
+}
+void init(){
+	fbegin = fend = (char*)mmap(NULL,WXMEM,PROT_WRITE|PROT_EXEC,MAP_ANONYMOUS|MAP_PRIVATE,-1,0);
+	REP(i,5){
+		funcPtr[(uchar)base[i]] = (void*)fend;
+		strncpy(fend,code[i],codeLen[i]);
+		fend += codeLen[i];
+	}
+}
+char buff[100];
+int main(){
+	init();
+	while(true){
+		scanf("%s", buff);
+		if(!strcmp("---", buff)) break;
+		funcPtr[buff[0]] = fend;
+		switch(buff[2]){
+			case 'P':
+				SimpleRecursionScheme(buff+4);
+				break;
+			case 'C':
+				Composition(buff+4);
+				break;
+		}
+	}
+	while(scanf("%s", buff)!=EOF){
+		printf("%ld\n", Compute(buff));
+	}
+	munmap(fbegin,WXMEM);
+	return 0;
+}
+

@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0061)https://satori.tcs.uj.edu.pl/contest/3486421/problems/3649914 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+   
+Problem G: Strumienie (obowiązkowe)
+ - Satori Testing System
+  </title>
+  
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/structure.css">
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/style.css">
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/default.css">
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/pygments.css">
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/html4css1.css">
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/jquery.fileupload-ui.css">
+  <link rel="stylesheet" href="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/jquery-ui-1.8.10.custom.css">
+  <link rel="icon" href="https://satori.tcs.uj.edu.pl/files/satori_logo.png">
+
+  <script src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/MathJax.js" type="text/javascript"></script>
+  <script src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/jquery.min.js" type="text/javascript"></script>
+  <script src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/jquery.fileupload.js" type="text/javascript"></script>
+  <script src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/jquery.fileupload-ui.js" type="text/javascript"></script>
+  <script src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/clock.js" type="text/javascript"></script>
+  
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="cover">
+        <div id="header">
+            
+<ul class="headerLeftUl">
+    <li><a href="https://satori.tcs.uj.edu.pl/news">Main page</a></li>
+    
+        <li>Selected contest PF, 2015/16 (<a href="https://satori.tcs.uj.edu.pl/contest/select">change</a>)</li>
+    
+	<li id="clock">Server time: 10:53:53</li>
+</ul>
+<ul class="headerRightUl">
+    
+        <li>Logged in as Paweł Wanat</li>
+        <li><a href="https://satori.tcs.uj.edu.pl/logout">Sign out</a></li>
+    
+</ul>
+
+        </div>
+        <div id="container">
+            <div class="colmask threecol"> 
+                <div class="colmid"> 
+                    <div class="colleft"> 
+                        <div class="col2 rDots"> 
+                            <!-- Column 2 start --> 
+                            <img src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/satori_banner.png" alt="" width="90%">
+                            
+<div id="navigationPanel">
+    <ul>
+        
+            <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/news">News</a></li>
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/subpage/3492659">Rules</a></li>
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/problems">Problems</a></li>
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/submit">Submit</a></li>
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/results">Results</a></li>
+            
+           
+            
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/ranking/3746038">Marks</a></li>
+            
+            
+            
+
+            
+            
+        
+    </ul>
+</div>
+
+                            <!-- Column 2 end --> 
+                        </div> 
+                        <div class="col1"> 
+                            <!-- Column 1 start - Main Column--> 
+                            <div class="logos bDots">
+                                <table>
+                                <tbody><tr>
+                                  <td><img src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/kapital_ludzki.png" height="85px" alt=""></td>
+                                  <td><img src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/herb.png" height="85px" alt=""></td>
+                                  <td style="text-align: right;"><img src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/ue_efs.png" height="85px" alt=""></td>
+                                  <td><img src="./Problem G_ Strumienie (obowiązkowe) - Satori Testing System_files/tcslogo.png" alt=""></td>
+                                </tr>
+                                <tr>
+                                <td colspan="3" style="font-size: 80%; font-weight: bold; padding-top: 5px;">
+                                Projekt dofinansowany przez Unię Europejską w ramach Europejskiego Funduszu Społecznego.
+                                </td>
+                                </tr>
+                                </tbody></table>
+                            </div>
+                            <div id="content">
+                                
+
+                                
+
+<div class="buttton_bar">
+
+
+  <a class="button" href="https://satori.tcs.uj.edu.pl/contest/3486421/submit?select=3649914">Submit</a>
+
+</div>
+
+<div class="mainsphinx">
+
+  <div class="section" id="zadanie-g-sml-strumienie">
+<h1>Zadanie G: SML - Strumienie<a class="headerlink" href="https://satori.tcs.uj.edu.pl/contest/3486421/problems/3649914#zadanie-g-sml-strumienie" title="Permalink to this headline">¶</a></h1>
+<p>Strumień to nieskończona lista obliczana leniwie (i spamiętywana). W każdym momencie wyewaluowany jest pewien prefiks strumienia - pozostała część jest reprezentowana jako funkcja zeroargumentowa. Strumienie można definiować rekursywnie, wykorzystując w definicji ten sam strumień (albo nawet wiele współzależnych strumieni na raz). Potrzebne definicje są poniżej:</p>
+<div class="highlight-python"><div class="highlight"><pre>local
+  datatype 'a memo_cell = Value of 'a | Computation of unit -&gt; 'a
+  exception CellInvalid
+  fun make_memo () =
+  let
+    val cell = ref (Computation (fn _ =&gt; raise CellInvalid))
+    fun res () =
+        case !cell of
+          Computation h =&gt; (
+            let val r = h () in
+              cell := Value r;
+              r
+            end)
+        | Value y =&gt; y
+  in
+    (cell, res)
+  end
+in
+  (* fn : ((unit -&gt; 'a) -&gt; 'b * (unit -&gt; 'a)) -&gt; 'b
+   * smemo pozwala spamiętywać obliczenia oraz pełni rolę operatora
+   * punktu stałego (ze względu na brak rekursji na wartościach
+   * w SMLu).
+   * Zadaniem 'f' jest skonstruować obliczenie do spamiętania
+   * oraz dowolną wartość, którą zwraca memo.
+   * Argumentem funkcji 'f' jest to samo obliczenie, które
+   * 'f' skonstruuje - ale w opakowanej wersji ze spamiętaniem.
+   *)
+  fun memo f =
+  let
+    val (mcell, memoized_computation) = make_memo ()
+    val (result, computation) = f memoized_computation
+  in
+    mcell := Computation computation;
+    result
+  end
+end
+
+(* Strumień to funkcja zeroargumentowa zwracająca
+ * głowę strumienia oraz ogon. Ze względu na rekursywny
+ * typ, funkcja opakowana jest w konstruktor Stream
+ *)
+datatype 'a stream = Stream of unit -&gt; 'a * 'a stream
+fun seval (Stream f) = f ();
+fun shd s = #1 (seval s);
+fun stl s = #2 (seval s);
+
+(* fn : ('a stream -&gt; 'a * 'a stream) -&gt; 'a stream
+ * smemo tworzy spamiętany strumień. Ten strumień jest
+ * przekazywany do funkcji 'f' jako argument oraz
+ * zwracany przez smemo. Funkcja 'f' konstruuje
+ * początek strumienia - głowę oraz ogon.
+ *)
+fun smemo f = memo (fn the_stream =&gt;
+  let val wrapped_stream = Stream the_stream
+      in (wrapped_stream, fn () =&gt; f wrapped_stream)
+  end
+)
+</pre></div>
+</div>
+<p>Zadanie polega na implementacji szeregu funkcji operujących na strumieniach. Strumienie powinny być spamiętane używając funkcji smemo (ewentualnie memo). Nie można korzystać z “niefunkcyjnych” elementów SMLa, takich jak referencje, array’e, vector’y.</p>
+<p>W pliku .sml powinny znaleźć się definicje (proszę nie umieszczać definicji smemo, memo, stream):</p>
+<div class="highlight-python"><div class="highlight"><pre>(* Strumień stały (x, x, x, ...) w pamięci O(1) *)
+val sconst = fn : 'a -&gt; 'a stream
+(* N-ty element strumienia, numerowanie od 0 *)
+val snth = fn : int -&gt; 'a stream -&gt; 'a
+(* Lista pierwszych N elementów strumienia *)
+val stake = fn : int -&gt; 'a stream -&gt; 'a list
+
+(* 'smap f s' to strumień zmapowany przez f:
+    [f s_0, f s_1, f s_2, ...] *)
+val smap = fn : ('a -&gt; 'b) -&gt; 'a stream -&gt; 'b stream
+(* 'smap1 f s' to strumień ze zmapowanym pierwszym elementem:
+    [f s_0, s_1, s_2, ...] *)
+val smap1 = fn : ('a -&gt; 'a) -&gt; 'a stream -&gt; 'a stream
+
+(* 'snat s z' to strumień [z, s z, s (s z), s (s (s z)), ...] *)
+val snat = fn : ('a -&gt; 'a) -&gt; 'a -&gt; 'a stream
+
+(* 'stab f' to strumień [f 0, f 1, f 2, ...] *)
+val stab = fn : (int -&gt; 'a) -&gt; 'a stream
+
+(* 'szip s t' to strumień [(s_0, t_0), (s_1, t_1), ...] *)
+val szip = fn : 'a stream -&gt; 'b stream -&gt; ('a * 'b) stream
+(* 'szipwith f s t' to strumień [f (s_0, t_0), f (s_1, t_1), ...] *)
+val szipwith = fn : ('a * 'b -&gt; 'c) -&gt; 'a stream -&gt; 'b stream -&gt; 'c stream
+
+(* 'sfoldl f start s' to strumień:
+  [start, f(start, s_0), f(f(start, s_0), s_1), f(f(f(start, s_0), s_1), s_2), ...] *)
+val sfoldl = fn : ('a * 'b -&gt; 'a) -&gt; 'a -&gt; 'b stream -&gt; 'a stream
+(* 'srev s' to strumień:
+  [[s_0], [s_1, s_0], [s_2, s_1, s_0], ...] *)
+val srev = fn : 'a stream -&gt; 'a list stream
+
+(* 'sfilter p s' to strumień s po usunięciu elementów,
+   dla których predykat p jest fałszywy. Jeśli w strumieniu
+   s jest skończenie wiele (n) elementów spełniających p,
+   to próba odczytania n+1-szego elementu może prowadzić
+   do zapętlenia. Proszę pamiętać, że sfilter ma być
+   leniwy - tzn. samo wywołanie sfilter nie może skanować
+   wejściowego strumienia w poszukiwaniu głowy spełniającej
+   predykat. To ma nastąpić dopiero w trakcie czytania zwróconego
+   strumienia. *)
+val sfilter = fn : ('a -&gt; bool) -&gt; 'a stream -&gt; 'a stream
+(* 'stakewhile p s' to lista początkowych elementów strumienia,
+   dla których p jest prawdziwy. Jeśli p jest prawdziwy
+   dla nieskończenie wielu elementów, to funkcja może nie skończyć
+   działania *)
+val stakewhile = fn : ('a -&gt; bool) -&gt; 'a stream -&gt; 'a list
+
+(* srepeat tworzy strumień elementów powtarzających się cyklicznie.
+   Zakładamy, że podana lista jest niepusta. Odczytanie pierwszych
+   k elementów ze strumienia zajmuje czas O(k). Pamięć ograniczona
+   jest przez O(n) gdzie n to liczba elementów w danej liście. Programy
+   wykorzystujące więcej pamięci mogą dostać RTE lub TLE. *)
+val srepeat = fn : 'a list -&gt; 'a stream
+(* spairs s to strumień:
+   [(s_0, s_1), (s_2, s_3), (s_4, s_5), ...] *)
+val spairs = fn : 'a stream -&gt; ('a * 'a) stream
+
+(* dzieli strumień s na n strumieni:
+   [[s_0, s_n, s_{2n}, s_{3n} ...]
+    [s_1, s_{n+1}, s_{2n+1}, ...]
+    ...
+    [s_(n-1), s_{2n-1}, s_{3n-1}, ...]]
+   UWAGA:
+    Jeżeli z otrzymanych strumieni odczytujemy łącznie k elementów,
+    a największy numer odczytanego elementu w oryginalnym strumieniu
+    to l, to czas działania jest ograniczony przez O(n+k+l). Tzn.,
+    zwrócone strumienie dzielą pracę i nie przeskakują niezależnie elementów
+    w czasie O(nk). *)
+val ssplitn = fn : int -&gt; 'a stream -&gt; 'a stream list
+
+(* Operacja odwrotna do ssplitn. Przeplata dane strumienie tworząc
+   wspólny strumień *)
+val sinterleave = fn : 'a stream list -&gt; 'a stream
+</pre></div>
+</div>
+<p>Uwaga1: Funkcje typu sfoldl, które są sparametryzowane funkcjami, nie powinny wielokrotnie wywoływać tych funkcji bez potrzeby (na tych samych argumentach). Pamiętajmy, że sml nie spamiętuje wielokrotnych wywołań.</p>
+<p>Uwaga2: Należy czytać dokładnie tyle wartości ze strumieni wejściowych ile potrzeba do wyliczenia żądanych wartości w strumieniach wyjściowych. Wynika to stąd, że wyliczenie niektórych wartości w strumieniach wejściowych może być znacznie droższe niż innych. Programy, które odwołują się do większej części strumieni niż trzeba mogą dostać TLE.</p>
+<div class="section" id="przyklad">
+<h2>Przykład<a class="headerlink" href="https://satori.tcs.uj.edu.pl/contest/3486421/problems/3649914#przyklad" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>- val nat = snat (fn x =&gt; x + 1) 0;
+val nat = Stream fn : int stream
+- shd nat;
+val it = 0 : int
+- stl nat;
+val it = Stream fn : int stream
+- shd (stl nat);
+val it = 1 : int
+- snth 10 nat;
+val it = 10 : int
+- stake 7 nat;
+val it = [0,1,2,3,4,5,6] : int list
+- val twos = sconst 2;
+val twos = Stream fn : int stream
+- stake 3 twos;
+val it = [2,2,2] : int list
+- stake 10 (smap1 (fn x =&gt; x + 7) nat);
+val it = [7,1,2,3,4,5,6,7,8,9] : int list
+- stake 10 (smap (fn x =&gt; x * x) nat);
+val it = [0,1,4,9,16,25,36,49,64,81] : int list
+- stake 10 (stab (fn x =&gt; (x, x*x, x*x*x)));
+val it =
+  [(0,0,0),(1,1,1),(2,4,8),(3,9,27),(4,16,64),(5,25,125),(6,36,216),
+   (7,49,343),(8,64,512),(9,81,729)] : (int * int * int) list
+- stake 10 (szip nat (szipwith (fn (x, y) =&gt; [x+y, x*y]) twos nat));
+val it =
+  [(0,[2,0]),(1,[3,2]),(2,[4,4]),(3,[5,6]),(4,[6,8]),(5,[7,10]),(6,[8,12]),
+   (7,[9,14]),(8,[10,16]),(9,[11,18])] : (int * int list) list
+- stake 8 (sfoldl (fn (x, y) =&gt; x * (y+1)) 1 nat);
+val it = [1,1,2,6,24,120,720,5040] : int list
+- stake 5 (srev nat);
+val it = [[0],[1,0],[2,1,0],[3,2,1,0],[4,3,2,1,0]] : int list list
+- stake 10 (sfilter (fn x =&gt; x mod 3 &lt;&gt; 0) nat);
+val it = [1,2,4,5,7,8,10,11,13,14] : int list
+- stakewhile (fn x =&gt; x &lt;&gt; 7) nat;
+val it = [0,1,2,3,4,5,6] : int list
+- stake 15 (srepeat [1,2,3]);
+val it = [1,2,3,1,2,3,1,2,3,1,2,3,...] : int list
+- stake 10 (spairs nat);
+val it =
+  [(0,1),(2,3),(4,5),(6,7),(8,9),(10,11),(12,13),(14,15),(16,17),(18,19)]
+  : (int * int) list
+- foldr (fn (str, lst) =&gt; (stake 7 str)::lst) [] (ssplitn 5 nat);
+val it =
+  [[0,5,10,15,20,25,30],[1,6,11,16,21,26,31],[2,7,12,17,22,27,32],
+   [3,8,13,18,23,28,33],[4,9,14,19,24,29,34]] : int list list
+- stake 20 (sinterleave (ssplitn 5 nat));
+val it = [0,1,2,3,4,5,6,7,8,9,10,11,...] : int list
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+                            </div>
+                            <!-- Column 1 end --> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+
+
+</body></html>

@@ -1,0 +1,77 @@
+Thread #0: Started with arguments: 0, 0.
+Thread #0: New thread created, thread id = 1.
+Thread #0: Dummy loop, index = 0.
+Thread #1: Started with arguments: 0, 1.
+Thread #1: New thread created, thread id = 2.
+Thread #1: Dummy loop, index = 0.
+Thread #0: Dummy loop, index = 1.
+Thread #2: Started with arguments: 1, 2.
+Thread #2: New thread created, thread id = 3.
+Thread #2: Dummy loop, index = 0.
+Thread #1: Dummy loop, index = 1.
+Thread #0: Dummy loop, index = 2.
+Thread #3: Started with arguments: 3, 3.
+Thread #3: New thread created, thread id = 4.
+Thread #3: Dummy loop, index = 0.
+Thread #2: Dummy loop, index = 1.
+Thread #1: Dummy loop, index = 2.
+Thread #0: Dummy loop, index = 3.
+Thread #4: Started with arguments: 6, 4.
+Thread #4: New thread created, thread id = 5.
+Thread #4: Dummy loop, index = 0.
+Thread #3: Dummy loop, index = 1.
+Thread #2: Dummy loop, index = 2.
+Thread #1: Dummy loop, index = 3.
+Thread #0: Dummy loop, index = 4.
+Thread #5: Started with arguments: 10, 5.
+Thread #5: Dummy loop, index = 0.
+Thread #4: Dummy loop, index = 1.
+Thread #3: Dummy loop, index = 2.
+Thread #2: Dummy loop, index = 3.
+Thread #1: Dummy loop, index = 4.
+Thread #0: Dummy loop, index = 5.
+Thread #5: Dummy loop, index = 1.
+Thread #4: Dummy loop, index = 2.
+Thread #3: Dummy loop, index = 3.
+Thread #2: Dummy loop, index = 4.
+Thread #1: Dummy loop, index = 5.
+Thread #0: Dummy loop, index = 6.
+Thread #5: Dummy loop, index = 2.
+Thread #4: Dummy loop, index = 3.
+Thread #3: Dummy loop, index = 4.
+Thread #2: Dummy loop, index = 5.
+Thread #1: Dummy loop, index = 6.
+Thread #0: Dummy loop, index = 7.
+Thread #5: Dummy loop, index = 3.
+Thread #4: Dummy loop, index = 4.
+Thread #3: Dummy loop, index = 5.
+Thread #2: Dummy loop, index = 6.
+Thread #1: Dummy loop, index = 7.
+Thread #0: Dummy loop, index = 8.
+Thread #5: Dummy loop, index = 4.
+Thread #4: Dummy loop, index = 5.
+Thread #3: Dummy loop, index = 6.
+Thread #2: Dummy loop, index = 7.
+Thread #1: Dummy loop, index = 8.
+Thread #0: Dummy loop, index = 9.
+Thread #5: Dummy loop, index = 5.
+Thread #4: Dummy loop, index = 6.
+Thread #3: Dummy loop, index = 7.
+Thread #2: Dummy loop, index = 8.
+Thread #1: Dummy loop, index = 9.
+Thread #0: Exiting.
+Thread #5: Dummy loop, index = 6.
+Thread #4: Dummy loop, index = 7.
+Thread #3: Dummy loop, index = 8.
+Thread #2: Dummy loop, index = 9.
+Thread #1: Exiting.
+Thread #5: Dummy loop, index = 7.
+Thread #4: Dummy loop, index = 8.
+Thread #3: Dummy loop, index = 9.
+Thread #2: Exiting.
+Thread #5: Dummy loop, index = 8.
+Thread #4: Dummy loop, index = 9.
+Thread #3: Exiting.
+Thread #5: Dummy loop, index = 9.
+Thread #4: Exiting.
+Thread #5: Exiting.

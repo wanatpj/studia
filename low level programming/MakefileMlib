@@ -1,0 +1,16 @@
+all: test.x
+
+mlib.so: mlib.asm
+	nasm -felf64  mlib.asm
+	ld -shared mlib.o -o mlib.so
+
+test.x: test.c mlib.so
+	gcc test.c mlib.so -o test.x
+
+test: test.x
+	export LD_LIBRARY_PATH=. && ./test.x
+
+clean:
+	rm -f *.o *.so test.x
+
+.PHONY: all clean test

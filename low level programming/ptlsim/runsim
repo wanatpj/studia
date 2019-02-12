@@ -1,0 +1,1 @@
+./ptlsim -logfile test.log -loglevel 6 -trigger -- ./test.x < test.in 

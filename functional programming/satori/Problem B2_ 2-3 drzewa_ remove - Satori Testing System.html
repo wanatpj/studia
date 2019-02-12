@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0061)https://satori.tcs.uj.edu.pl/contest/3486421/problems/3507587 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+   
+Problem B2: 2-3 drzewa: remove
+ - Satori Testing System
+  </title>
+  
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/structure.css">
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/style.css">
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/default.css">
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/pygments.css">
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/html4css1.css">
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/jquery.fileupload-ui.css">
+  <link rel="stylesheet" href="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/jquery-ui-1.8.10.custom.css">
+  <link rel="icon" href="https://satori.tcs.uj.edu.pl/files/satori_logo.png">
+
+  <script src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/MathJax.js" type="text/javascript"></script>
+  <script src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/jquery.min.js" type="text/javascript"></script>
+  <script src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/jquery.fileupload.js" type="text/javascript"></script>
+  <script src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/jquery.fileupload-ui.js" type="text/javascript"></script>
+  <script src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/clock.js" type="text/javascript"></script>
+  
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+    <div id="cover">
+        <div id="header">
+            
+<ul class="headerLeftUl">
+    <li><a href="https://satori.tcs.uj.edu.pl/news">Main page</a></li>
+    
+        <li>Selected contest PF, 2015/16 (<a href="https://satori.tcs.uj.edu.pl/contest/select">change</a>)</li>
+    
+	<li id="clock">Server time: 10:54:21</li>
+</ul>
+<ul class="headerRightUl">
+    
+        <li>Logged in as Paweł Wanat</li>
+        <li><a href="https://satori.tcs.uj.edu.pl/logout">Sign out</a></li>
+    
+</ul>
+
+        </div>
+        <div id="container">
+            <div class="colmask threecol"> 
+                <div class="colmid"> 
+                    <div class="colleft"> 
+                        <div class="col2 rDots"> 
+                            <!-- Column 2 start --> 
+                            <img src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/satori_banner.png" alt="" width="90%">
+                            
+<div id="navigationPanel">
+    <ul>
+        
+            <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/news">News</a></li>
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/subpage/3492659">Rules</a></li>
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/problems">Problems</a></li>
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/submit">Submit</a></li>
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/results">Results</a></li>
+            
+           
+            
+            
+            
+            
+                <li><a href="https://satori.tcs.uj.edu.pl/contest/3486421/ranking/3746038">Marks</a></li>
+            
+            
+            
+
+            
+            
+        
+    </ul>
+</div>
+
+                            <!-- Column 2 end --> 
+                        </div> 
+                        <div class="col1"> 
+                            <!-- Column 1 start - Main Column--> 
+                            <div class="logos bDots">
+                                <table>
+                                <tbody><tr>
+                                  <td><img src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/kapital_ludzki.png" height="85px" alt=""></td>
+                                  <td><img src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/herb.png" height="85px" alt=""></td>
+                                  <td style="text-align: right;"><img src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/ue_efs.png" height="85px" alt=""></td>
+                                  <td><img src="./Problem B2_ 2-3 drzewa_ remove - Satori Testing System_files/tcslogo.png" alt=""></td>
+                                </tr>
+                                <tr>
+                                <td colspan="3" style="font-size: 80%; font-weight: bold; padding-top: 5px;">
+                                Projekt dofinansowany przez Unię Europejską w ramach Europejskiego Funduszu Społecznego.
+                                </td>
+                                </tr>
+                                </tbody></table>
+                            </div>
+                            <div id="content">
+                                
+
+                                
+
+<div class="buttton_bar">
+
+
+  <a class="button" href="https://satori.tcs.uj.edu.pl/contest/3486421/submit?select=3507587">Submit</a>
+
+</div>
+
+<div class="mainsphinx">
+
+  <div class="section" id="zadanie-b2-sml-2-3-drzewa-remove">
+<h1>Zadanie B2: SML - 2-3 drzewa (remove)<a class="headerlink" href="https://satori.tcs.uj.edu.pl/contest/3486421/problems/3507587#zadanie-b2-sml-2-3-drzewa-remove" title="Permalink to this headline">¶</a></h1>
+<p>2-3 drzewa to drzewa poszukiwań binarnych w których każdy węzeł jest albo:</p>
+<ul class="simple">
+<li>Liściem (pustym)</li>
+<li>Węzłem z jednym kluczem i parą synów</li>
+<li>Węzłem z parą kluczy i trójką synów</li>
+</ul>
+<p>W SML-u można to reprezentować przez następujący typ danych:</p>
+<div class="highlight-python"><div class="highlight"><pre>datatype 'a node = Two of 'a node * 'a * 'a node |
+                 Three of 'a node * 'a * 'a node * 'a * 'a node |
+                 Empty;
+</pre></div>
+</div>
+<p>Liście 2-3 drzewa znajdują się na jednym poziomie. W SML-u warunek ten można sprawdzić poniższą funkcją check:</p>
+<div class="highlight-python"><div class="highlight"><pre>(* compute height *)
+
+local
+  fun height' (Empty, h) = h |
+      height' (Two(t1, _, _), h) = height' (t1, h+1) |
+      height' (Three(t1, _, _, _, _), h) = height' (t1, h+1);
+in
+  fun height t = height' (t, 0);
+end
+
+(* check if height is ok *)
+
+local
+  fun check' (Empty, 0) = true |
+      check' (Empty, h) = false |
+      check' (Two(t1, _, t2), h) = check' (t1, h-1) andalso check' (t2, h-1) |
+      check' (Three(t1, _, t2, _, t3), h) = check' (t1, h-1) andalso check' (t2, h-1) andalso check'(t3, h-1)
+in
+  fun check T = check' (T, height T)
+end
+</pre></div>
+</div>
+<p>2-3 drzewo zachowuje porządek inorder elementów. Dzięki temu poniższa funkcja sprawdzająca obecność wartości w drzewie działa w czasie <span class="math"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" role="math" style="width: 4.386em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.589em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.824em 1003.48em 3.134em -999.997em); top: -2.729em; left: 0.003em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math; font-style: italic;">O</span><span class="mo" id="MathJax-Span-4" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-5" style="font-family: MathJax_Main;">log</span><span class="mo" id="MathJax-Span-6"></span><span class="mi" id="MathJax-Span-7" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.174em;">n</span><span class="mo" id="MathJax-Span-8" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.735em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.344em; border-left-width: 0px; border-left-style: solid; width: 0px; height: 1.392em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-1">O(\log n)</script></span>:</p>
+<div class="highlight-python"><div class="highlight"><pre>(* search *)
+
+fun search cmp (x, Empty) = false |
+  search cmp (x, Two (left, y, right)) =
+    let val c = cmp (x, y);
+    in
+      if (c &lt; 0) then
+        search cmp (x, left)
+      else if (c &gt; 0) then
+        search cmp (x, right)
+      else true
+    end |
+  search cmp (x, Three (left, y, middle, z, right)) =
+    let val c1 = cmp (x, y);
+    in
+      if (c1 &lt; 0) then
+        search cmp (x, left)
+      else if (c1 &gt; 0) then
+        let val c2 = cmp (x, z)
+        in
+          if (c2 &lt; 0) then
+            search cmp (x, middle)
+          else if (c2 &gt; 0) then
+            search cmp (x, right)
+          else true
+        end
+      else true
+    end;
+</pre></div>
+</div>
+<p>Argument <span class="math"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-9" role="math" style="width: 2.223em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.824em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.881em 1001.82em 2.849em -999.997em); top: -2.502em; left: 0.003em;"><span class="mrow" id="MathJax-Span-10"><span class="mi" id="MathJax-Span-11" style="font-family: MathJax_Math; font-style: italic;">c</span><span class="mi" id="MathJax-Span-12" style="font-family: MathJax_Math; font-style: italic;">m</span><span class="mi" id="MathJax-Span-13" style="font-family: MathJax_Math; font-style: italic;">p</span></span><span style="display: inline-block; width: 0px; height: 2.507em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.274em; border-left-width: 0px; border-left-style: solid; width: 0px; height: 0.906em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>c</mi><mi>m</mi><mi>p</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">cmp</script></span> funkcji search to funkcja porównująca elementy, zwracająca wartość &lt; 0, = 0, &gt; 0 w zależności od relacji między argumentami. Taka funkcja może zostać zdefiniowana np. tak:</p>
+<div class="highlight-python"><div class="highlight"><pre>fun mycmp (x : int, y) = x - y;
+</pre></div>
+</div>
+<p>Napisz funkcję <span class="math"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;remove&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;&#39;a&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;&amp;#x2217;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;&#39;a&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;int&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;&#39;a * &#39;a node&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;bool * &#39;a node&lt;/mtext&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-14" role="math" style="width: 29.261em; display: inline-block;"><span style="display: inline-block; position: relative; width: 23.967em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.824em 1023.91em 3.134em -999.997em); top: -2.729em; left: 0.003em;"><span class="mrow" id="MathJax-Span-15"><span class="texatom" id="MathJax-Span-16"><span class="mrow" id="MathJax-Span-17"><span class="mtext" id="MathJax-Span-18" style="font-family: MathJax_Main;">remove</span></span></span><span class="mo" id="MathJax-Span-19" style="font-family: MathJax_Main; padding-left: 0.287em;">:</span><span class="mo" id="MathJax-Span-20" style="font-family: MathJax_Main; padding-left: 0.287em;">(</span><span class="texatom" id="MathJax-Span-21"><span class="mrow" id="MathJax-Span-22"><span class="mtext" id="MathJax-Span-23" style="font-family: MathJax_Main;">'a</span></span></span><span class="mo" id="MathJax-Span-24" style="font-family: MathJax_Main; padding-left: 0.231em;">∗</span><span class="texatom" id="MathJax-Span-25" style="padding-left: 0.231em;"><span class="mrow" id="MathJax-Span-26"><span class="mtext" id="MathJax-Span-27" style="font-family: MathJax_Main;">'a</span></span></span><span class="mo" id="MathJax-Span-28" style="font-family: MathJax_Main; padding-left: 0.287em;">→</span><span class="texatom" id="MathJax-Span-29" style="padding-left: 0.287em;"><span class="mrow" id="MathJax-Span-30"><span class="mtext" id="MathJax-Span-31" style="font-family: MathJax_Main;">int</span></span></span><span class="mo" id="MathJax-Span-32" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-33" style="font-family: MathJax_Main; padding-left: 0.287em;">→</span><span class="texatom" id="MathJax-Span-34" style="padding-left: 0.287em;"><span class="mrow" id="MathJax-Span-35"><span class="mtext" id="MathJax-Span-36" style="font-family: MathJax_Main;">'a * 'a node</span></span></span><span class="mo" id="MathJax-Span-37" style="font-family: MathJax_Main; padding-left: 0.287em;">→</span><span class="texatom" id="MathJax-Span-38" style="padding-left: 0.287em;"><span class="mrow" id="MathJax-Span-39"><span class="mtext" id="MathJax-Span-40" style="font-family: MathJax_Main;">bool * 'a node</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.735em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.344em; border-left-width: 0px; border-left-style: solid; width: 0px; height: 1.392em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext>remove</mtext></mrow><mo>:</mo><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>'a</mtext></mrow><mo>∗</mo><mrow class="MJX-TeXAtom-ORD"><mtext>'a</mtext></mrow><mo stretchy="false">→</mo><mrow class="MJX-TeXAtom-ORD"><mtext>int</mtext></mrow><mo stretchy="false">)</mo><mo stretchy="false">→</mo><mrow class="MJX-TeXAtom-ORD"><mtext>'a * 'a node</mtext></mrow><mo stretchy="false">→</mo><mrow class="MJX-TeXAtom-ORD"><mtext>bool * 'a node</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-3">\textrm{remove} : (\textrm{'a} * \textrm{'a} \rightarrow \textrm{int}) \rightarrow \textrm{'a * 'a node} \rightarrow \textrm{bool * 'a node}</script></span>, która usuwa wartość z drzewa. Pierwszy argument funkcji to funkcja porównująca, drugi to para (x, T), gdzie x to wstawiany element, a T to drzewo, do którego wstawiamy. Wartość zwracana przez fukcję to para, której pierwszy element to wartość true/false mówiąca czy element x znajdował się w drzewie, a drugi element to drzewo T bez elementu x.</p>
+<p>W pliku .sml powinna znaleźć się definicja:</p>
+<div class="highlight-python"><div class="highlight"><pre>fun remove cmp (x, T) = ...
+</pre></div>
+</div>
+<div class="section" id="uwaga">
+<h2>Uwaga<a class="headerlink" href="https://satori.tcs.uj.edu.pl/contest/3486421/problems/3507587#uwaga" title="Permalink to this headline">¶</a></h2>
+<p>Rozwiązanie powinno być czysto funkcyjne. Rozwiązania bazujące na referencjach lub tablicach będą odrzucane.</p>
+</div>
+<div class="section" id="przyklad">
+<h2>Przykład<a class="headerlink" href="https://satori.tcs.uj.edu.pl/contest/3486421/problems/3507587#przyklad" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>- remove mycmp (5, Three (Two (Empty,2,Empty),3,Two (Empty,4,Empty),5,Two (Empty,6,Empty)));
+val it = (true,Two (Two (Empty,2,Empty),3,Three (Empty,4,Empty,6,Empty))) : bool * int node
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+                            </div>
+                            <!-- Column 1 end --> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size4, sans-serif;"></div></div></body></html>

@@ -1,0 +1,48 @@
+let
+	fun isNil l = 0
+	val null = isNil
+in let
+	fun length l = IF (isNil l) 0 (1+(length (tl l)))
+    fun map f l = IF (isNil l) NIL ((f (hd l))::(map f l))
+	fun foldl f acc list = IF (isNil list) acc (foldl f (f (hd list) acc) (tl list) )
+	fun foldr f init list = IF (isNil list) init (f (hd list) (foldr f init (tl list)))
+	fun zip l1 l2 = IF (isNil l1) NIL ((PAIR (hd l1) (hd l2))::(zip (tl l1) (tl l2)))
+	fun take n l = IF (zero n) NIL (hd l)::(take (dec n) (tl l))
+	fun drop n l = IF (zero n) l (drop (dec n) (tl l))
+
+	fun rev l1 = let
+		fun trev l1 acc= IF (isNil l1) acc (trev (tl l1) ((hd l1)::acc))
+		in trev l1 NIL end
+
+	fun concat l1 = let
+		fun concat2 l = IF (isNil l) NIL (let
+			val firstL = hd l
+			val restL = tl l
+			in IF (isNil firstL) (concat2 restL) ((hd firstL)::(concat2 ((tl firstL)::(restL)))) end)
+ 		in concat2 l1 end
+	fun cat l1 l2 = concat (l1::l2::NIL)
+
+	fun filter pred l = IF (isNil l) NIL (let
+		val first = hd l
+		val rest = tl l
+		val ok = pred first
+		val frest = filter pred rest
+		in IF ok (first::frest) frest end
+		)
+
+	val ones = 1::ones
+
+	fun inc v = 1+v+(inc2 1)
+	val inc2 = inc
+	val dec = inc
+	fun zero x = 0
+
+	fun add x y = x+y
+	fun leq x y = 1
+in  (PAIR (PAIR (PAIR (PAIR null length) (PAIR map foldl)) 
+		(PAIR (PAIR zip take) (PAIR rev concat))
+	) (PAIR (PAIR (PAIR cat filter) (PAIR ones inc)) 
+		(PAIR (PAIR dec zero) (PAIR add leq))
+	))  
+end
+end 

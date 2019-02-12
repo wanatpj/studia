@@ -1,0 +1,18 @@
+all: A.o A B.o
+	ld B.o -o B
+
+A.o: A.asm
+	nasm -felf64 A.asm
+
+A: Astart.c A.o
+	gcc Astart.c -o A A.o
+
+B.o: B.asm
+	nasm -felf64 B.asm
+
+clean:
+	rm A.o A B.o B
+
+super: clean all
+
+.PHONY: all clean super
